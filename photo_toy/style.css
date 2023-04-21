@@ -1,0 +1,134 @@
+@font-face {
+        font-family: 'KCC-Ganpan';
+        src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2302@1.0/KCC-Ganpan.woff2') classmat('woff2');
+        font-weight: normal;
+        font-style: normal;
+    }
+
+    body {
+        font-family: "KCC-Ganpan";
+        margin: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+    }
+
+    html {
+        background-color: #444;
+    }
+
+    .container {
+        width: 390px;
+        height: 1100px;
+        background-color: #000000;
+    }
+
+    .photos {
+        margin-top: 30px;
+    }
+
+    .photo-frame {
+        position: relative;
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+        background-color: white;
+        margin: 15px 20px;
+        height: 200px;
+        align-items: center;
+        display: flex;
+        justify-content: center;
+
+    }
+
+
+    /* 아래 영역 전체는, flexible하게 하되 그 내부 아이템들은 세로로 쌓을거야 */
+    /* 근데 모두 가운데 정렬 했으면 좋겠어! */
+    .footer {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    /* 아래 영역의 제목 부분은 폰트가 좀 두껍고, 사이즈는 25픽셀! 흰색으로 */
+    .f-title {
+        font-size: 25px;
+        font-weight: 900;
+        color: #ffffff;
+    }
+
+    /* 아래 영역의 날짜 부분은 폰트가 중간 두께고, 사이즈는 15픽셀! 흰색으로 */
+    .f-date {
+        font-size: 15px;
+        font-weight: 500;
+        color: #ffffff;
+    }
+
+    .photo-frame button {
+        display: inline-block;
+        padding: .5em .75em;
+        color: #000;
+        font-size: inherit;
+        font-weight: 300;
+        font-style: italic;
+        line-height: normal;
+        vertical-align: middle;
+        background-color: #fdfdfd;
+        cursor: pointer;
+        border: 1px solid #ebebeb;
+        border-bottom-color: #e2e2e2;
+        border-radius: .25em;
+        transition: color .3s ease-in-out, box-shadow .3s ease-in-out;
+
+    }
+
+    .photo-frame button:hover {
+        color: white;
+        background-color: #555555;
+        border-color: #adadad;
+    }
+
+    .topbar {
+        width: 100%;
+        height: 30px;
+        padding-bottom: 10px;
+        background-color: #000000;
+    }
+
+    .menu {
+        display: flex;
+        justify-content: center;
+    }
+
+    .menu button {
+        width: 100px;
+        height: 50px;
+        margin: 10px;
+        transition: color .3s ease-in-out, box-shadow .3s ease-in-out;
+        display: inline-block;
+        border: 1px solid #ebebeb;
+        border-bottom-color: #e2e2e2;
+        border-radius: .25em;
+        color: #000;
+        background-color: #ffffff;
+        border: 1px solid #ebebeb;
+        border-bottom-color: #e2e2e2;
+        cursor: pointer;
+
+        border-radius: .25em;
+    }
+
+    .menu button:hover {
+        color: white;
+        background-color: #555555;
+        border-color: #adadad;
+    }
+
+    .title {
+        font-size: 30px;
+        font-weight: 900;
+        color: #ffffff;
+        text-align: center;
+        margin-top: 10px;
+    }

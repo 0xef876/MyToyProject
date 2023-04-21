@@ -1,0 +1,65 @@
+input {
+    width: 30px;
+    height: 30px;
+    margin-bottom: 15px;
+    margin-right: 5px;
+    text-align: center;
+    font-size: 30px;
+}
+
+/* GENERAL BUTTON STYLING */
+button,
+button::after {
+    -webkit-transition: all 0.3s;
+    -moz-transition: all 0.3s;
+    -o-transition: all 0.3s;
+    transition: all 0.3s;
+}
+
+button {
+    background: none;
+    border: 3px solid #fff;
+    border-radius: 5px;
+    color: #fff;
+    display: block;
+    font-size: 1.6em;
+    font-weight: bold;
+    margin: 1em auto;
+    padding: 2em 6em;
+    position: relative;
+    text-transform: uppercase;
+}
+
+button::before,
+button::after {
+    background: #fff;
+    content: '';
+    position: absolute;
+    z-index: -1;
+}
+
+button:hover {
+    color: #2ecc71;
+}
+
+.btn::before {
+    height: 100%;
+    left: 0;
+    top: 0;
+    width: 100%;
+}
+
+.btn::after {
+    background: #2ecc71;
+    height: 100%;
+    left: 0;
+    top: 0;
+    width: 100%;
+}
+
+.btn:hover:after {
+    height: 0;
+    left: 50%;
+    top: 50%;
+    width: 0;
+}
