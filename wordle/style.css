@@ -72,7 +72,7 @@ button:hover {
 
 
 .modal {
-    display: none;
+    display: hidden;
     position: fixed;
     z-index: 1;
     left: 0;
