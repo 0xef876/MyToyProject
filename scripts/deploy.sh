@@ -9,9 +9,9 @@ SERVICE_NAME="apache2"
 # 변경 사항 감지하여 업데이트 및 아파치 서비스 재시작 함수 정의
 update_and_restart() {
     cd $SERVER_PATH
-    git fetch --all
-    git reset --hard origin/$BRANCH_NAME
-    service $SERVICE_NAME restart
+    sudo git fetch --all
+    sudo git reset --hard origin/$BRANCH_NAME
+    sudo service $SERVICE_NAME restart
 }
 
 # 깃허브 웹훅으로부터 POST 요청 받기
