@@ -1,6 +1,15 @@
 var answer_list = ['apple', 'green', 'black', 'about', 'earth', 'shark', 'stack', 'queue', 'guest', 'admin', 'lemon', 'mango', 'onion', 'party', 'rocky', 'chair', 'dance', 'elbow', 'faith', 'glass', 'hotel', 'igloo', 'jeans', 'knife', 'laugh', 'money', 'night', 'opera', 'pizza', 'queen', 'river', 'smile', 'table', 'uncle', 'voice', 'water', 'xerox', 'yacht', 'zebra', 'alien', 'blissful', 'candy', 'dream', 'eager', 'fancy', 'gummy', 'happy', 'ivory', 'jolly', 'karma', 'lemon', 'mango', 'novel', 'onion', 'party', 'quirky', 'river', 'salsa', 'tango', 'umbra', 'vixen', 'waltz', 'xylan', 'yahoo', 'zonal', 'amber', 'brief', 'coral', 'daisy', 'elite', 'flake', 'gleam', 'happy', 'ivory', 'jelly', 'karma', 'lemon', 'mango', 'novel', 'onion', 'party', 'quick', 'rocky', 'salsa', 'tango', 'umbra', 'voice', 'witty', 'xylem', 'yield', 'zesty', 'album', 'bronze', 'carve', 'drape', 'erupt', 'fairy', 'glare', 'heart', 'image', 'jazzy', 'kayak', 'light', 'mural', 'night', 'oasis', 'plush', 'quirky', 'relax', 'salsa', 'tempo', 'unity', 'venom'];
 let count = 0;
+// modal 만들기
+document.getElementById('rule').addEventListener('click', function () {
+    document.querySelector('.modal').style.display = 'flex';
+}
+)
+document.querySelector('.close').addEventListener('click', function () {
+    document.querySelector('.modal').style.display = 'none';
+}
 
+)
 function choose(choices) {
     var index = Math.floor(Math.random() * choices.length);
     return choices[index];
@@ -58,6 +67,8 @@ document.getElementById("submit").addEventListener('click',
         `
         document.querySelector('form').insertAdjacentHTML('beforeend', template);
     });
+
+
 document.getElementById("submit-btn").addEventListener('click',
     function check() {
         count += 1;
@@ -102,16 +113,5 @@ var template =
         document.querySelector('form').insertAdjacentHTML('beforeend', template);
     });
 
-// modal 만들기
-document.getElementById('rule').addEventListener('click', function () {
-    document.querySelector('.modal').style.display = 'flex';
-}
 
-
-)
-document.querySelector('.close').addEventListener('click', function () {
-    document.querySelector('.modal').style.display = 'none';
-}
-
-)
 
