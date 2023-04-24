@@ -13,11 +13,11 @@
     <h1 align='center'>W o r d l e</h1>
 <form onsubmit="document.getElementById('submit-btn').click(); return false;" align='center'>
     <div>
-    <input class="input" type="text" onkeyup="moveToNext(this, 'input02')">
-    <input id="input02" class="input" type="text" onkeyup="moveToNext(this, 'input03')">
-    <input id="input03" class="input" type="text" onkeyup="moveToNext(this, 'input04')">
-    <input id="input04" class="input" type="text" onkeyup="moveToNext(this, 'input05')">
-    <input id="input05" class="input" type="text" onkeyup="moveToNext(this, 'submit-btn')">
+    <input id = "input01" class="input" type="text" onkeyup="moveToNext(this, 'input02')">
+    <input id="input02" class="input" type="text" onkeyup="moveToNext(this, 'input03','input01')">
+    <input id="input03" class="input" type="text" onkeyup="moveToNext(this, 'input04','input02')">
+    <input id="input04" class="input" type="text" onkeyup="moveToNext(this, 'input05','input03')">
+    <input id="input05" class="input" type="text" onkeyup="moveToNext(this, 'submit-btn','input04')">
     <button type="submit" id="submit-btn" style="display:none;"></button>
     </div>
 </form>

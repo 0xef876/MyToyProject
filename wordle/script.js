@@ -7,11 +7,14 @@ function choose(choices) {
 }
 var answer = choose(answer_list);
 
-function moveToNext(input, nextInputId) {
+function moveToNext(input, nextInputId, prevInputId) {
   if (input.value.length == 1) {
     document.getElementById(nextInputId).focus();
+  } else if (input.value.length == 0 && prevInputId) {
+    document.getElementById(prevInputId).focus();
   }
 }
+
 document.getElementById("submit").addEventListener('click',
     function check() {
         count += 1;
@@ -44,11 +47,11 @@ document.getElementById("submit").addEventListener('click',
         `
 <form onsubmit="document.getElementById('submit-btn').click(); return false;" align='center'>
     <div>
-    <input class="input" type="text" onkeyup="moveToNext(this, 'input${count}2')">
-    <input id="input${count}2" class="input" type="text" onkeyup="moveToNext(this, 'input${count}3')">
-    <input id="input${count}3" class="input" type="text" onkeyup="moveToNext(this, 'input${count}4')">
-    <input id="input${count}4" class="input" type="text" onkeyup="moveToNext(this, 'input${count}5')">
-    <input id="input${count}5" class="input" type="text" onkeyup="moveToNext(this, 'submit-btn')">
+   <input id="input${count}1" class="input" type="text" onkeyup="moveToNext(this, 'input${count}2')">
+    <input id="input${count}2" class="input" type="text" onkeyup="moveToNext(this, 'input${count}3', 'input${count}1')">
+    <input id="input${count}3" class="input" type="text" onkeyup="moveToNext(this, 'input${count}4', 'input${count}2')">
+    <input id="input${count}4" class="input" type="text" onkeyup="moveToNext(this, 'input${count}5', 'input${count}3')">
+    <input id="input${count}5" class="input" type="text" onkeyup="moveToNext(this, 'submit-btn', 'input${count}4')">
     <button type="submit" id="submit-btn" style="display:none;"></button>
     </div>
 </form>
@@ -87,11 +90,11 @@ var template =
         `
 <form onsubmit="document.getElementById('submit-btn').click(); return false;" align='center'>
     <div>
-    <input class="input" type="text" onkeyup="moveToNext(this, 'input${count}2')">
-    <input id="input${count}2" class="input" type="text" onkeyup="moveToNext(this, 'input${count}3')">
-    <input id="input${count}3" class="input" type="text" onkeyup="moveToNext(this, 'input${count}4')">
-    <input id="input${count}4" class="input" type="text" onkeyup="moveToNext(this, 'input${count}5')">
-    <input id="input${count}5" class="input" type="text" onkeyup="moveToNext(this, 'submit-btn')">
+   <input id="input${count}1" class="input" type="text" onkeyup="moveToNext(this, 'input${count}2')">
+    <input id="input${count}2" class="input" type="text" onkeyup="moveToNext(this, 'input${count}3', 'input${count}1')">
+    <input id="input${count}3" class="input" type="text" onkeyup="moveToNext(this, 'input${count}4', 'input${count}2')">
+    <input id="input${count}4" class="input" type="text" onkeyup="moveToNext(this, 'input${count}5', 'input${count}3')">
+    <input id="input${count}5" class="input" type="text" onkeyup="moveToNext(this, 'submit-btn', 'input${count}4')">
     <button type="submit" id="submit-btn" style="display:none;"></button>
     </div>
 </form>
