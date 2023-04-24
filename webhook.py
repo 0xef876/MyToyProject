@@ -9,3 +9,4 @@ repo_name = json_data['repository']['name']
 # 레포지토리 최신화하기
 if event_type == 'push':
     subprocess.call(['sudo git', '-C', '/var/www/html/MyToyProject', 'pull'])
+
