@@ -8,18 +8,48 @@
     <link rel="stylesheet" href="style.css">
     <title>Wordle</title>
 </head>
+
 <body>
     <h1 align='center'>W o r d l e</h1>
-    <div align='center'>
-        <input class="input" type="text">
-        <input class="input" type="text">
-        <input class="input" type="text">
-        <input class="input" type="text">
-        <input class="input" type="text">
+<form onsubmit="document.getElementById('submit-btn').click(); return false;" align='center'>
+    <div>
+    <input class="input" type="text">
+    <input class="input" type="text">
+    <input class="input" type="text">
+    <input class="input" type="text">
+    <input class="input" type="text">
+    <button type="submit" id="submit-btn" style="display:none;"></button>
     </div>
-    <p align='center'>
-        <button class="btn">Submit</button>
-    </p>
+</form>
+    <div align="center">
+        <button id='submit' class="btn">Submit</button>
+        <button id='rule' class="btn">Rule</button>
+    </div>
+
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <!-- 게임룰을 적을건데 좀 이쁘게 만들어봐 -->
+            <h2>Game Rule</h2>
+            <hr>
+            <p>Guess the word!</p>
+            <ul>
+                <li>If alphabet is in the word, and position is correct, It's background color is <span
+                        class="yellow">Yellow</span>.</li>
+                <li>If alphabet is in the word, and position is different, It's background color is <span
+                        class="green">Green</span>.</li>
+                <li>If alphabet is not in the word, It's background color is <span class="gray">Gray</span>.</li>
+            </ul>
+            <hr>
+
+            <p>단어를 맞춰보세요!</p>
+            <ul>
+            <li>맞추려는 단어와 입력한 알파벳과 위치가 같다면, 배경색은 노란색입니다.</li>
+            <li>맞추려는 단어에 입력한 알파벳은 있지만, 위치가 다르다면, 배경색은 초록색입니다.</li>
+            <li>맞추려는 단어에 입력한 알파벳이 없다면, 배경은 회색입니다. </li>
+            </ul>
+        </div>
+    </div>
 
     <script src="script.js"></script>
 </body>

@@ -5,7 +5,8 @@ function choose(choices) {
     return choices[index];
 }
 var answer = choose(answer_list);
-document.querySelector('button').addEventListener('click',
+
+document.getElementById("submit").addEventListener('click',
     function check() {
         var input = document.querySelectorAll('.input');
         let check = 0;
@@ -32,12 +33,74 @@ document.querySelector('button').addEventListener('click',
             }
         }
 
-        var template = `<div  align = 'center'>
-    <input class="input">
-    <input class="input">
-    <input class="input">
-    <input class="input">
-    <input class="input">
-    </div>`
-        document.querySelector('div').insertAdjacentHTML('beforeend', template);
+        var template = 
+        `
+        <form onsubmit="document.getElementById('submit-btn').click(); return false;" align='center'>
+    <div>
+        <input class="input" type="text">
+    <input class="input" type="text">
+    <input class="input" type="text">
+    <input class="input" type="text">
+    <input class="input" type="text">
+    <button type="submit" id="submit-btn" style="display:none;"></button>
+    </div>
+</form>
+        `
+        document.querySelector('form').insertAdjacentHTML('beforeend', template);
     });
+document.getElementById("submit-btn").addEventListener('click',
+    function check() {
+        var input = document.querySelectorAll('.input');
+        let check = 0;
+        for (let i = 0; i < 5; i++) {
+            if (input[i].value == '') {
+                input[i].style.backgroundColor = "lightgray";
+            }
+            else if (input[i].value == answer[i]) {
+                input[i].style.backgroundColor = "green"
+                check++;
+            }
+            else if (answer.includes(input[i].value)) {
+                input[i].style.backgroundColor = "Yellow"
+            }
+            else {
+                input[i].style.backgroundColor = "lightgray"
+            }
+            console.log(check);
+            if (check == 5) {
+                return alert("Success");
+            }
+            else {
+                input[i].classList.remove("input");
+            }
+        }
+
+        var template = 
+        `
+        <form onsubmit="document.getElementById('submit-btn').click(); return false;" align='center'>
+    <div>
+        <input class="input" type="text">
+    <input class="input" type="text">
+    <input class="input" type="text">
+    <input class="input" type="text">
+    <input class="input" type="text">
+    <button type="submit" id="submit-btn" style="display:none;"></button>
+    </div>
+</form>
+        `
+        document.querySelector('form').insertAdjacentHTML('beforeend', template);
+    });
+
+// modal 만들기
+document.getElementById('rule').addEventListener('click', function () {
+    document.querySelector('.modal').style.display = 'flex';
+}
+
+
+)
+document.querySelector('.close').addEventListener('click', function () {
+    document.querySelector('.modal').style.display = 'none';
+}
+
+)
+
