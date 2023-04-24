@@ -1,4 +1,14 @@
+
 <?php
+// 로그 파일 경로
+$log_file = '/var/www/html/webhook.log';
+
+// 로그 메시지
+$log_message = 'Webhook received at ' . date('Y-m-d H:i:s') . PHP_EOL;
+
+// 로그 파일에 메시지 기록
+file_put_contents($log_file, $log_message, FILE_APPEND);
+
 // 깃허브에서 전송한 웹훅 데이터 수신
 $data = file_get_contents('php://input');
 
