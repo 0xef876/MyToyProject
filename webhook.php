@@ -19,9 +19,10 @@ $json = json_decode($data, true);
 $repo_path = '/var/www/html/MyToyProject';
 
 // 레포지토리 최신화 명령어 실행
-exec("cd $repo_path && sudo git pull && sudo systemctl restart apache2");
+exec("cd $repo_path && sudo git pull && sudo systemctl restart apache2", $output);
 
-// 로그 파일에 메시지 기록
-$log_message = 'Webhook handled at ' . date('Y-m-d H:i:s') . PHP_EOL;
+// 결과 로그 기록
+$log_message = 'Command result: ' . implode(PHP_EOL, $output) . PHP_EOL;
 file_put_contents($log_file, $log_message, FILE_APPEND);
+
 ?>
