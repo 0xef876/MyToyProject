@@ -10,7 +10,7 @@ $log_message = 'Webhook received at ' . date('Y-m-d H:i:s') . PHP_EOL;
 file_put_contents($log_file, $log_message, FILE_APPEND);
 
 // 깃허브에서 전송한 웹훅 데이터 수신
-$data = file_get_contents('phps://input');
+$data = file_get_contents('php://input');
 
 // JSON 데이터를 파싱하여 배열로 변환
 $json = json_decode($data, true);
