@@ -1,4 +1,4 @@
 # MyToyProject
 
 
-<a href="http://adminkitty.iptime.org">WebSite</a>
+<a href="https://kittypark.duckdns.org">WebSite</a>
