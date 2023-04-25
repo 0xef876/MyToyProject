@@ -99,6 +99,8 @@ for (let i = 0; i < playlist.length; i++) {
 
 window.onload = function () {
   setTimeout(function () {
-    playBtn.click();
+    if (playBtn.innerHTML == `<i class="fa-sharp fa-solid fa-circle-play"></i>`) {
+          playBtn.click();
+    }
   }, 7000);
 };
