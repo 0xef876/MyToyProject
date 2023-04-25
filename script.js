@@ -8,3 +8,11 @@ function goToPhoto() {
 function goToCoin() {
     window.location.href = "rotatecoin/index.html";
 }
+function goToCommingSoon()
+{
+    Swal.fire({
+        icon: 'error',
+        title: 'Oops...',
+        text: 'Comming Soon !',
+    })
+}
