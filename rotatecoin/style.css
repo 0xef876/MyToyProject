@@ -11,12 +11,10 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 80vh;
+    margin-top: 15%;
+    /* height: 80vh; */
 }
 
-div {
-    height: 50%;
-}
 .coin-container {
     display: flex;
     flex-direction: column;

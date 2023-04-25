@@ -5,21 +5,31 @@ button.addEventListener('click', () => {
   let intervalId;
   let flipCount = 0;
   let count = Math.floor(Math.random() * 11) + 5;
-  
+
   intervalId = setInterval(() => {
     coin.classList.toggle('flip');
     flipCount++;
     if (flipCount === count) {
       clearInterval(intervalId);
       if (count % 2 === 0) {
-
-        const result = '뒷면';
-        alert(result);
-
+        Swal.fire({
+          title: '뒷면!',
+          text: 'Tail',
+          imageUrl: '../img/coin-back.jpg',
+          imageWidth: 200,
+          imageHeight: 200,
+          imageAlt: 'Tail image',
+        })
       }
-      else{
-        const result = '앞면';
-        alert(result);
+      else {
+        Swal.fire({
+          title: '앞면!',
+          text: 'Head',
+          imageUrl: '../img/coin-front.jpg',
+          imageWidth: 200,
+          imageHeight: 200,
+          imageAlt: 'Head image',
+        })
       }
       coin.classList.remove('flip');
     }
@@ -27,7 +37,7 @@ button.addEventListener('click', () => {
 });
 
 
-$('#flip').on('click', function(event) {
+$('#flip').on('click', function (event) {
   $(this).toggleClass('start-fun');
   var $page = $('.page');
   $page.toggleClass('color-bg-start')
