@@ -100,5 +100,5 @@ for (let i = 0; i < playlist.length; i++) {
 window.onload = function () {
   setTimeout(function () {
     playBtn.click();
-  }, 5000);
+  }, 7000);
 };
