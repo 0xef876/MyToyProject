@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <title>Music</title>
+    <link rel="stylesheet" type="text/css" href="style.css" />
+    <script src="https://kit.fontawesome.com/c78f0a815c.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <div class="video-container">
+        <video autoplay muted loop>
+            <source src="background.mp4" type="video/mp4">
+        </video>
+    </div>
+    <div class="music-player">
+        <audio src="song/aesthetics.mp3"></audio>
+        <div class="controls">
+            <button class="prev-btn"><i class="fa-solid fa-backward"></i></button>
+            <button class="play-btn"><i class="fa-sharp fa-solid fa-circle-play"></i></button>
+            <button class="next-btn"><i class="fa-solid fa-forward"></i></button>
+        </div>
+    </div>
+    <div style="display: none" class="playlist">
+        <ul>
+            <li><a href="#" data-src="song/beat.mp3">곡 2</a></li>
+            <li><a href="#" data-src="song/chill.mp3">곡 3</a></li>
+            <li><a href="#" data-src="song/deep.mp3">곡 4</a></li>
+            <li><a href="#" data-src="song/french-jazz.mp3">곡 5</a></li>
+            <li><a href="#" data-src="song/happyending.mp3">곡 6</a></li>
+            <li><a href="#" data-src="song/my-time.mp3">곡 7</a></li>
+            <li><a href="#" data-src="song/night-street.mp3">곡 8</a></li>
+            <li><a href="#" data-src="song/study.mp3">곡 9</a></li>
+            <li><a href="#" data-src="song/summerbackground.mp3">곡 10</a></li>
+            <li><a href="#" data-src="song/vintage.mp3">곡 11</a></li>
+            <li><a href="#" data-src="song/weeknds.mp3">곡 12</a></li>
+        </ul>
+    </div>
+
+
+
+    <script src="script.js"></script>
+</body>
+
+</html>
