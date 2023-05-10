@@ -22,3 +22,12 @@ function goToCommingSoon()
         text: 'Comming Soon !',
     })
 }
+
+function updateTime() {
+    var now = new Date();
+    var timeElem = document.getElementById('time');
+    timeElem.innerHTML = now.toLocaleTimeString();
+}
+
+// Update time every second
+setInterval(updateTime, 1000);
