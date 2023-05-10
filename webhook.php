@@ -1,4 +1,3 @@
-
 <?php
 // 로그 파일 경로
 $log_file = '/var/www/html/webhook.log';
