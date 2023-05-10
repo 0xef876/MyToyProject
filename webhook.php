@@ -19,7 +19,7 @@ $json = json_decode($data, true);
 $repo_path = '/var/www/html/MyToyProject';
 
 // 레포지토리 최신화 명령어 실행
-exec("cd $repo_path && sudo git pull && sudo systemctl restart apache2", $output);
+exec("cd $repo_path && git pull && systemctl restart apache2", $output);
 
 // 결과 로그 기록
 $log_message = 'Command result: ' . implode(PHP_EOL, $output) . PHP_EOL;
