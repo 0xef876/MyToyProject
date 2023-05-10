@@ -15,13 +15,13 @@ $data = file_get_contents('php://input');
 $json = json_decode($data, true);
 
 // 레포지토리 경로 설정
-$repo_path = '/var/www/html/MyToyProject';
+// $repo_path = '/var/www/html/MyToyProject';
 
 // 레포지토리 최신화 명령어 실행
-exec("cd $repo_path && sudo -u www-data git pull origin main && sudo systemctl start user@`id -u www-data`", $output);
-
+// exec("cd $repo_path && sudo -u www-data git pull origin main && sudo systemctl start user@`id -u www-data`", $output);
+shell_exec("sudo -u foo /var/www/html/deploy.sh");
 // 결과 로그 기록
-$log_message = 'Command result: ' . implode(PHP_EOL, $output) . PHP_EOL;
-file_put_contents($log_file, $log_message, FILE_APPEND);
+// $log_message = 'Command result: ' . implode(PHP_EOL, $output) . PHP_EOL;
+// file_put_contents($log_file, $log_message, FILE_APPEND);
 
 ?>
