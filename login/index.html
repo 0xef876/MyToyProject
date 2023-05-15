@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="style.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/core.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/sha256.js"></script>
+
+    <title>Login</title>
+</head>
+
+<body>
+        <div class="login">
+            <img src="../img/logo.png" alt="">
+            <h3>Welcome !!</h3>
+            <h2>Kitty Site</h2>
+            <form class="login-form">
+                <input id = "id" type="username" placeholder="Enter your username">
+                <input id = "pw" type="password" placeholder="Enter your password">
+                <button type="button" onclick=login()>LOGIN</button>
+                <button type = "button" onclick=openmodal()>Sign up</button>
+                <!-- <a href="#">Forget your passcode?</a> -->
+            </form>
+        </div>
+
+    <div class="signup">
+        <img src="../img/logo.png" alt="">
+        <h3>Welcome !!</h3>
+        <h2>Sign up</h2>
+        <form class="signup-form">
+            <input id="id1" type="username" placeholder="Enter your username">
+            <input id="pw1" type="password" placeholder="Enter your password">
+            <input id="phone" type="phone" placeholder="Enter your phone (010-????-????)">
+            <input id="name" type="name" placeholder="Enter your name">
+
+            <button type="button" onclick=signup()>Sign up</button>
+            <button type="button" onclick=closemodal()>Close</button>
+        </form>
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>

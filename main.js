@@ -14,6 +14,10 @@ function goToMusic() {
     window.location.href = "music/index.html";
 }
 
+function goToLogin(){
+    window.location.href = "login/index.html";
+}
+
 function goToCommingSoon()
 {
     Swal.fire({
