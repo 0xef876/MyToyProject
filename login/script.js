@@ -21,7 +21,7 @@ function login() {
 
 
     var xhr = new XMLHttpRequest();
-    xhr.open("GET", "http://211.187.174.33:8080/login?username=" + id + "&password=" + hash_pw);
+    xhr.open("GET", "https://kittypark.duckdns.org:8443/login?username=" + id + "&password=" + hash_pw);
     xhr.setRequestHeader("Content-Type", "application/json");
     xhr.send(JSON.stringify(data));
 
@@ -44,7 +44,7 @@ function signup() {
     const hash_pw1 = CryptoJS.SHA256(pw1).toString();
     var data = { "username": id1, "password": hash_pw1, "phone": phone, "name": name };
     var xhr = new XMLHttpRequest();
-    xhr.open("POST", "http://211.187.174.33:8080/signup?username=" + id1 + "&password=" + hash_pw1 + "&phone=" + phone + "&name=" + name);
+    xhr.open("POST", "https://kittypark.duckdns.org:8443/signup?username=" + id1 + "&password=" + hash_pw1 + "&phone=" + phone + "&name=" + name);
     xhr.setRequestHeader("Content-Type", "application/json");
     xhr.send(JSON.stringify(data));
 
