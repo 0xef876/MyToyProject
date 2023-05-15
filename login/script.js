@@ -12,6 +12,11 @@ function closemodal()
     document.querySelector(".login").style.display = "block";
 }
 
+function logout()
+{
+    location.reload();
+}
+
 function login() {
     
     var id = document.querySelector("#id").value;
@@ -29,6 +34,13 @@ function login() {
         var result = JSON.parse(xhr.responseText);
         if (result.message == "Login successful!") {
             alert("로그인 성공");
+            console.log(result)
+            document.querySelector(".logined").style.display = "block";
+            document.querySelector(".login").style.display = "none";
+            document.querySelector(".signup").style.display = "none";
+            document.querySelector(".logined").querySelector("h2").textContent = id;
+            document.querySelector(".logined").querySelector(".username").textContent = result["name"];
+            document.querySelector(".logined").querySelector(".userphone").textContent = result["phone"];
         }
         else {
             alert("로그인 실패");
