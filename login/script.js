@@ -34,7 +34,6 @@ function login() {
         var result = JSON.parse(xhr.responseText);
         if (result.message == "Login successful!") {
             alert("로그인 성공");
-            console.log(result)
             document.querySelector(".logined").style.display = "block";
             document.querySelector(".login").style.display = "none";
             document.querySelector(".signup").style.display = "none";
