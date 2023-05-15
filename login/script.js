@@ -52,6 +52,7 @@ function signup() {
         var result = JSON.parse(xhr.responseText);
         if (result.message == "Signup successful!") {
             alert("회원가입 성공");
+            location.reload();
         }
         else {
             alert("회원가입 실패" + result.message);
