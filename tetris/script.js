@@ -166,6 +166,7 @@ function gameovermodal(score){
     gameoversound = function(){};
     rotatesound = function(){};
     updateScore = function(){};
+    playerReset = function(){};
     document.getElementById("score").style.display = "none";
     // 모달 띄우기
     var modal = document.getElementById("myModal");
