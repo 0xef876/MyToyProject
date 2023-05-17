@@ -15,8 +15,9 @@ function arenaSweep() {
         const row = arena.splice(y, 1)[0].fill(0);
         arena.unshift(row);
         ++y;
-    
+        
         player.score += rowCount * 10;
+        breaklinesound();
         rowCount *= 2;
     }
     }
@@ -28,6 +29,7 @@ function collide(arena, player) {
         if (m[y][x] !== 0 &&
             (arena[y + o.y] &&
             arena[y + o.y][x + o.x]) !== 0) {
+        spacebarsound();
         return true;
         }
     }
@@ -154,10 +156,15 @@ function playerReset() {
 }
 
 function gameovermodal(score){
+    gameoversound()
     // 점수 표시
     document.getElementById("finalScore").innerText = "Result : " + score;
     // 테트리스 멈추기
-    document.getElementById("tetris").style.display = "none";
+    document.getElementById("tetris").remove();
+    spacebarsound = function(){};
+    breaklinesound = function(){};
+    gameoversound = function(){};
+    rotatesound = function(){};
     document.getElementById("score").style.display = "none";
     // 모달 띄우기
     var modal = document.getElementById("myModal");
@@ -184,6 +191,7 @@ function playerRotate(dir) {
 }
 
 function rotate(matrix, dir) {
+    rotatesound();
     for (let y = 0; y < matrix.length; ++y) {
     for (let x = 0; x < y; ++x) {
         [
@@ -248,6 +256,34 @@ document.addEventListener("keydown", event => {
     }
 
 });
+
+function spacebarsound()
+{
+    // spacebar sound
+    var audio = new Audio('asset/space.mp3');
+    audio.play();
+}
+
+function breaklinesound()
+{
+    // break line sound
+    var audio = new Audio('asset/line.mp3');
+    audio.play();
+
+}
+function rotatesound()
+{
+    // rotate sound
+    var audio = new Audio('asset/rotate.mp3');
+    audio.play();
+}
+
+function gameoversound()
+{
+    // game over sound
+    var audio = new Audio('asset/gameover.mp3');
+    audio.play();
+}
 
 const colors = [
     null,
