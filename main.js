@@ -17,7 +17,9 @@ function goToMusic() {
 function goToLogin(){
     window.location.href = "login/index.html";
 }
-
+function goToTetris() {
+    window.location.href = "tetris/index.html";
+}
 function goToCommingSoon()
 {
     Swal.fire({
