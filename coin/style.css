@@ -1,0 +1,27 @@
+
+html {
+    background: #202028;
+    color: #fff;
+    font-family: sans-serif;
+    font-size: 2em;
+    text-align: center;
+}
+
+
+table {
+    margin: 0 auto;
+}
+
+td {
+    padding: 0.5em;
+}
+
+.title {
+    font-size: 1.5em;
+
+}
+img {
+    width: 100px;
+    height: 100px;
+}
+/* Path: coin/index.html */

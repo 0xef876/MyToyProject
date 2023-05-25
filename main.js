@@ -20,6 +20,10 @@ function goToLogin(){
 function goToTetris() {
     window.location.href = "tetris/index.html";
 }
+function goToLivePrice()
+{
+    window.location.href = "coin/index.html";
+}
 function goToCommingSoon()
 {
     Swal.fire({
