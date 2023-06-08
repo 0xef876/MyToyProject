@@ -24,6 +24,10 @@ function goToLivePrice()
 {
     window.location.href = "coin/index.html";
 }
+function goToSnake()
+{
+    window.location.href = "snake/index.html";
+}
 function goToCommingSoon()
 {
     Swal.fire({

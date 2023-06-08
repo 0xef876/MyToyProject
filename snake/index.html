@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="style.css" />
+    <link rel="shortcut icon" type="image/png" href="../img/logo.png">
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@10?v=<?php echo time(); ?>"></script>
+
+    <title>Snake Game</title>
+</head>
+
+<body>
+    <div class="wrapper">
+        <div class="game">
+            <span class = "score"> Score = 0</span>
+            <span class = "high-score"> High Score = 0</span>
+        </div>
+
+        <div class="play-board">
+
+        </div>
+        <div class="controls">
+            <button class="control-btn up" onclick=up()><img src="./asset/up.png"/></button>
+            <button class="control-btn left" onclick=left()><img src="./asset/left.png" /></button>
+            <button class="control-btn right" onclick=right()><img src="./asset/right.png" /></button>
+            <button class="control-btn down" onclick=down()><img src="./asset/down.png" /></button>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>
