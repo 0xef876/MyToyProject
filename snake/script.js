@@ -92,6 +92,20 @@ function right() {
     }
 }
 
+// ESC누르면 멈추기
+document.addEventListener("keydown", function (event) {
+    if (event.key === "Escape") {
+        clearInterval(setIntervalId);
+        Swal.fire({
+            icon: 'info',
+            title: 'Pause',
+            text: 'Press OK to continue',
+        }).then(function () {
+            setIntervalId = setInterval(initGame, 100);
+        });
+    }
+});
+
 
 controls.forEach(button => button.addEventListener("click", changeDirection({key : button.dataset.key})));
 
