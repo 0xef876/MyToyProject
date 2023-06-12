@@ -111,6 +111,8 @@ function drawMatrix(matrix, offset) {
     });
 }
 
+
+
 function merge(arena, player) {
     player.matrix.forEach((row, y) => {
     row.forEach((value, x) => {
@@ -214,9 +216,20 @@ function rotate(matrix, dir) {
 
 let dropCounter = 0;
 let dropInterval = 1000;
-
+let isPaused = false;
 let lastTime = 0;
 function update(time = 0) {
+    if (isPaused) {
+        Swal.fire({
+            icon: 'info',
+            title: 'Pause',
+            text: 'Press OK to continue',
+        }).then(() => {
+            isPaused = false;
+            requestAnimationFrame(update);
+        });
+        return;
+    }
     const deltaTime = time - lastTime;
     lastTime = time;
     dropCounter += deltaTime;
@@ -245,6 +258,11 @@ document.addEventListener("keydown", event => {
     } else if (event.keyCode === 38) { // 위쪽 방향키
     playerRotate(1);
     }
+    // ESC를 누르면 일시정지
+    else if (event.keyCode === 27) {
+        isPaused = true;
+    }
+
     // 스페이스바를 누르면 한번에 내려가기
     else if (event.keyCode === 32) {
     while (!collide(arena, player)) {
