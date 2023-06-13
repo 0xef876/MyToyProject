@@ -179,8 +179,6 @@ playBoard.addEventListener("touchend", function (event) {
         }
     }
 });
-
-
 updateFoodPosition();
 setIntervalId = setInterval(initGame, 100);
 document.addEventListener("keyup", changeDirection);
