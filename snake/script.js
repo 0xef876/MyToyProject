@@ -152,7 +152,37 @@ const initGame = () => {
     playBoard.innerHTML = html;
 
 }
+// 터치 이벤트 처리
+playBoard.addEventListener("touchstart", function (event) {
+    touchStartX = event.touches[0].clientX;
+    touchStartY = event.touches[0].clientY;
+});
+
+playBoard.addEventListener("touchend", function (event) {
+    var touchEndX = event.changedTouches[0].clientX;
+    var touchEndY = event.changedTouches[0].clientY;
+
+    var deltaX = touchEndX - touchStartX;
+    var deltaY = touchEndY - touchStartY;
+
+    if (Math.abs(deltaX) > Math.abs(deltaY)) {
+        if (deltaX > 0) {
+            right();
+        } else {
+            left();
+        }
+    } else {
+        if (deltaY > 0) {
+            down();
+        } else {
+            up();
+        }
+    }
+});
+
 
 updateFoodPosition();
 setIntervalId = setInterval(initGame, 100);
 document.addEventListener("keyup", changeDirection);
+
+
