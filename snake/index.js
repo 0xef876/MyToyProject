@@ -1,14 +1,3 @@
-// 특정 IP로 웹사이트 접속시 화면에 Get OUT 출력
-
-const ip = location.host;
-if (ip === "1.231.154.140")
-{
-    while(1)
-    {alert("Get OUT");}
-}
-
-
-
 const playBoard = document.querySelector(".play-board");
 const scoreElement = document.querySelector(".score");
 const highScore = document.querySelector(".high-score");
