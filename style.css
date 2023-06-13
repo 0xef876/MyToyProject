@@ -1,19 +1,24 @@
         html {
-            background-color: #ccc;
+            /* background-color: #ccc; */
+            background-color: #da99ff;
+                background-image: radial-gradient(at 88% 0%,
+                        rgb(223, 148, 189) 0px,
+                        transparent 50%),
+                    radial-gradient(at 63% 46%, rgb(255, 227, 252) 0px, transparent 50%),
+                    radial-gradient(at 95% 53%, hsla(89, 91%, 67%, 1) 0px, transparent 50%),
+                    radial-gradient(at 79% 83%, hsla(170, 86%, 65%, 1) 0px, transparent 50%),
+                    radial-gradient(at 74% 93%, hsla(71, 93%, 75%, 1) 0px, transparent 50%),
+                    radial-gradient(at 52% 13%, hsla(110, 83%, 72%, 1) 0px, transparent 50%),
+                    radial-gradient(at 30% 80%, hsla(263, 79%, 66%, 1) 0px, transparent 50%);
+                color: #000;
+
+                height: 100%;
         }
 
         h1 {
             font-size: 40px;
             font-weight: bold;
             text-align: center;
-        }
-
-        .gallery {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            grid-gap: 20px;
-
-            margin: 20px;
         }
 
         .top {
@@ -24,19 +29,7 @@
             flex-direction: column;
         }
 
-        .box {
-            margin: auto;
-            position: relative;
-            overflow: hidden;
-            box-shadow: 0px 0px 5px #ccc;
-            transition: transform .3s;
-        }
 
-        .box:hover {
-            transform: scale(1.05);
-
-            box-shadow: 0px 0px 15px #ccc;
-        }
 
         img {
             display: block;
@@ -45,25 +38,6 @@
             transition: transform .3s;
         }
 
-        .box:hover img {
-            transform: scale(1.2);
-
-        }
-
-        .overlay {
-            position: absolute;
-            top: 0;
-            left: 0;
-            bottom: 0;
-            right: 0;
-            background-color: rgba(0, 0, 0, 0.5);
-            opacity: 0;
-            transition: opacity .3s;
-        }
-
-        .box:hover .overlay {
-            opacity: 1;
-        }
 
         .text {
             color: #fff;
@@ -81,7 +55,7 @@
 
         /* footer 스타일 */
         footer {
-            background-color: #ccc;
+            /* background-color: #ccc; */
             color: black;
             padding: 30px 0;
         }
@@ -103,3 +77,44 @@
             padding: 10px 0;
         }
         /* footer */
+
+.sample-slider {
+    width: 35%;
+}
+
+.sample-slider .swiper-slide {
+    /* added */
+    border-radius: 20px;
+    /* added */
+}
+
+/* added */
+.sample-slider img {
+    width: 100%;
+    vertical-align: bottom;
+    /* added */
+
+}
+
+/* 이미지에 마우스를 올려놨을떄 애니메이션 */
+.sample-slider .swiper-slide:hover img {
+    transform: scale(1.3);
+    transition: transform .4s;
+}
+
+
+
+div.swiper-button-next,
+div.swiper-button-prev {
+    width: 20px;
+    height: 30px;
+    border-radius: 50%;
+    margin: 0 -100px;
+}
+
+
+body {
+    place-items: center;
+    margin: 0;
+    padding: 0 24px;
+}

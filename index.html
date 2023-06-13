@@ -9,51 +9,76 @@
     <meta property="og:description" content="Toy Projects" />
     <meta property="og:image" content="https://kittypark.duckdns.org/img/KittyProject.png" />
     <title>KittyPark</title>
-    <link rel="shortcut icon" type="image/png" href="img/logo.png"/>
-    <link rel="stylesheet" href="style.css"/>
+
+    <link rel="shortcut icon" type="image/png" href="img/logo.png" />
+    <link rel="stylesheet" href="style.css" />
     <script src="/index.js"></script>
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@10?v=<?php echo time(); ?>"></script>
-
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
+    <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
 </head>
 
 <body>
     <div class="top">
         <h1>Kitty's Toy Project</h1>
     </div>
-    <div class="gallery">
-        <div class="box" onclick="goToWordle()">
-            <img src="img/Wordle.png">
-            <div class="overlay"></div>
+
+    <div class="swiper sample-slider">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide" onclick="goToWordle()">
+                <img src="img/Wordle.png">
+                <div class="overlay"></div>
+            </div>
+            <div class="swiper-slide" onclick="goToPhoto()">
+                <img src="img/photo_toy.png">
+                <div class="overlay"></div>
+            </div>
+            <div class="swiper-slide" onclick="goToCoin()">
+                <img src="img/coin.png">
+                <div class="overlay"></div>
+            </div>
+            <div class="swiper-slide" onclick="goToMusic()">
+                <img src="img/music.png">
+                <div class="overlay"></div>
+            </div>
+            <div class="swiper-slide" onclick="goToLogin()">
+                <img src="img/login.png">
+                <div class="overlay"></div>
+            </div>
+            <div class="swiper-slide" onclick="goToTetris()">
+                <img src="img/tetris.png">
+                <div class="overlay"></div>
+            </div>
+            <div class="swiper-slide" onclick="goToLivePrice()">
+                <img src="img/liveprice.png">
+                <div class="overlay"></div>
+            </div>
+            <div class="swiper-slide" onclick="goToSnake()">
+                <img src="img/snake.png">
+                <div class="overlay"></div>
+            </div>
         </div>
-        <div class="box" onclick="goToPhoto()">
-            <img src="img/photo_toy.png">
-            <div class="overlay"></div>
-        </div>
-        <div class="box" onclick="goToCoin()">
-            <img src="img/coin.png">
-            <div class="overlay"></div>
-        </div>
-        <div class="box" onclick="goToMusic()">
-            <img src="img/music.png">
-            <div class="overlay"></div>
-        </div>
-        <div class="box" onclick="goToLogin()">
-            <img src="img/login.png">
-            <div class="overlay"></div>
-        </div>
-        <div class="box" onclick="goToTetris()">
-            <img src="img/tetris.png">
-            <div class="overlay"></div>
-        </div>
-        <div class="box" onclick="goToLivePrice()">
-            <img src="img/liveprice.png">
-            <div class="overlay"></div>
-        </div>
-        <div class="box" onclick="goToSnake()">
-            <img src="img/snake.png">
-            <div class="overlay"></div>
-        </div>
+        <div class="swiper-pagination"></div>
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-button-next"></div>
     </div>
+
+    <script>
+    const swiper = new Swiper('.sample-slider', {
+        effect: "cards",    //added
+        grabCursor: true,   //added
+        pagination: {
+            el: '.swiper-pagination',
+        },
+        navigation: {
+            nextEl: ".swiper-button-next",
+            prevEl: ".swiper-button-prev",
+        },
+    })
+
+
+    </script>
+
 
     <footer>
         <div>
@@ -77,7 +102,7 @@
                         </a>
                     </td>
                     <td>
-                        <div id = "time"></div>
+                        <div id="time"></div>
                     </td>
                 </tr>
             </table>
