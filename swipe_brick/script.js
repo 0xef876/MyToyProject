@@ -435,7 +435,7 @@
 		}
 		setTimeout(function () {
 			return Ball_update();
-		}, 1000 / 144);
+		}, 1000 / 500);
 	}
 
 
