@@ -482,7 +482,7 @@
 		}
 		setTimeout(function () {
 			return smoothCallback(n + 1);
-		}, 1000 / 144);
+		}, 1000 / 500);
 	}
 	const callback = async () => { // 공 날라갔다가 돌아왔을때
 		Iscallback = true;
