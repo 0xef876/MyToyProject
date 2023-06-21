@@ -34,6 +34,14 @@
 	let tg, ax, ay, over, B; // GetPath, DrawPath
 	let Iscallback = false;
 	let Isend = false;
+
+
+	function sound() {
+		// rotate sound
+		var audio = new Audio('asset/brick.mp3');
+		audio.play();
+	}
+
 	/* object */
 	class ball {
 		constructor(x, y) {
@@ -101,6 +109,8 @@
 					}
 
 					b.cnt--;
+					sound();
+
 					if (b.cnt <= 0)
 						Blocks.splice(i, 1)
 				}
@@ -391,8 +401,6 @@
 			console.log(Balls.map(v => v.opacity));
 			turn++;
 		}
-		e.preventDefault(); // 기본 터치 이벤트 동작 막기
-
 	}
 
 	const onTouch = (e) => {
