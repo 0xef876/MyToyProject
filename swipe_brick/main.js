@@ -316,34 +316,6 @@
 		}
 	}
 
-	const onTouchStart = (e) => {
-		if (mousestate === 2 || Iscallback) return; // touchend 한 상태이면
-		mousestate = 1; // touchstart 한 상태
-		onTouch(e.touches[0]);
-	};
-
-	const onTouchMove = (e) => {
-		if (mousestate === 1) onTouch(e.touches[0], 1); // touchstart 한 상태이면
-	};
-	const onTouchEnd = async (e) => {
-		if (mousestate === 1) {
-			// if touchstart
-			mousestate = 2; // touchstate = touchend
-			ctx.lineDashOffset = 0; // 예상 경로 초기화
-			Shootcnt = Balls.length; // ball 개수만큼 Shootcnt 설정
-			Ball_update(); // 공 업데이트
-			let digree = GetDigree(fb.x + fb.dx, fb.x, fb.y - fb.dy, fb.y);
-			digree = digree < 0 ? -270 - digree : 90 - digree;
-			let point = GetPointFromDigree(fb.x, fb.y, digree, 30);
-			let tick = Math.abs(Math.floor(Math.abs(point.x - fb.x) / fb.dx));
-			for (var i = 0; i < Balls.length; i++) {
-				let s = await balls_shoot(i, tick);
-			}
-			console.log(Balls.map((v) => v.opacity));
-			turn++;
-		}
-	};
-
 	const onMouseDown = e => {
 		if (mousestate === 2 || Iscallback) return; // mouseup 한 상태이면
 		mousestate = 1; // mousedown 한 상태
@@ -389,28 +361,62 @@
 		let point = GetPointFromDigree(fb.x, fb.y, digree, 3);
 		GetPath((point.x - fb.x), -(point.y - fb.y));
 	}
+	const onTouchStart = e => {
+		if (mousestate === 2 || Iscallback) return;
+		mousestate = 1;
+		onTouch(e);
+		e.preventDefault(); // 기본 터치 이벤트 동작 막기
 
-	const onTouch = (e, isMove) => {
-		const touch = isMove ? e : e.touches[0];
+	}
+
+	const onTouchMove = e => {
+		if (mousestate === 1) onTouch(e, 1);
+		e.preventDefault(); // 기본 터치 이벤트 동작 막기
+
+	}
+
+	const onTouchEnd = async e => {
+		if (mousestate === 1) {
+			mousestate = 2;
+			ctx.lineDashOffset = 0;
+			Shootcnt = Balls.length;
+			Ball_update();
+			let digree = GetDigree(fb.x + fb.dx, fb.x, fb.y - fb.dy, fb.y);
+			digree = digree < 0 ? -270 - (digree) : 90 - (digree);
+			let point = GetPointFromDigree(fb.x, fb.y, digree, 30);
+			let tick = Math.abs(Math.floor(Math.abs(point.x - fb.x) / fb.dx));
+			for (var i = 0; i < Balls.length; i++) {
+				let s = await balls_shoot(i, tick);
+			}
+			console.log(Balls.map(v => v.opacity));
+			turn++;
+		}
+		e.preventDefault(); // 기본 터치 이벤트 동작 막기
+
+	}
+
+	const onTouch = (e) => {
 		pos = {
-			x: touch.pageX - wrap.getBoundingClientRect().left,
-			y: touch.pageY - wrap.getBoundingClientRect().top - document.querySelector("span").offsetHeight,
+			x: e.touches[0].pageX - wrap.getBoundingClientRect().left,
+			y: e.touches[0].pageY - wrap.getBoundingClientRect().top - document.querySelector("span").offsetHeight
 		};
-		let digree = GetDigree(pos.x, fb.x, pos.y, fb.y); // get digree between touch_position and ball_position
+		let digree = GetDigree(pos.x, fb.x, pos.y, fb.y);
 
-		let min_angle = 12; // 좌우 최소 각도
+		let min_angle = 12;
 		if (Math.abs(digree) < 90 + min_angle) {
-			// 공과 터치 커서 사이 각도가 100도 이하이면 최솟값으로 변경
-			let point = digree > 0 ? GetPointFromDigree(fb.x, fb.y, -min_angle, 3) : GetPointFromDigree(fb.x, fb.y, -180 + min_angle, 3);
-			GetPath(point.x - fb.x, -(point.y - fb.y));
+			let point =
+				digree > 0
+					? GetPointFromDigree(fb.x, fb.y, -min_angle, 3)
+					: GetPointFromDigree(fb.x, fb.y, -180 + min_angle, 3);
+			GetPath((point.x - fb.x), -(point.y - fb.y));
 			return;
 		}
-		digree = digree < 0 ? -270 - digree : 90 - digree;
+		digree = digree < 0 ? -270 - (digree) : 90 - (digree);
 		let point = GetPointFromDigree(fb.x, fb.y, digree, 3);
-		GetPath(point.x - fb.x, -(point.y - fb.y));
-	};
+		GetPath((point.x - fb.x), -(point.y - fb.y));
+	}
 
-	
+
 	const Ball_update = () => {
 		if (Blocks.length == 0 && AddBalls.length == 0 && Balls[fbid]) {
 			// console.log(fbid);
@@ -597,7 +603,7 @@
 			text: 'Game Over !',
 		}).then(function () {
 			location.reload();
-		});    
+		});
 	};
 	const balls_shoot = (i, t) => {
 		return new Promise((res, rej) => {
