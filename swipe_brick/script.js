@@ -35,7 +35,6 @@
 	let Iscallback = false;
 	let Isend = false;
 
-	const isTouchDevice = 'ontouchstart' in document.documentElement;
 
 	function sound() {
 		// rotate sound
@@ -111,14 +110,9 @@
 
 					b.cnt--;
 
-					if (!isTouchDevice) {
-						// 모바일
-						if (b.cnt <= 0) {
-							sound();
-						}
-					}
+					// sound();
 
-
+					if (b.cnt <= 0)
 						Blocks.splice(i, 1)
 				}
 			}
