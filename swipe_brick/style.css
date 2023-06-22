@@ -116,8 +116,8 @@ label {
     box-shadow: 0 2px 7px rgba(0, 0, 0, 0.3);
     display: none;
     /* 임시 지정 */
-    width: 500px;
-    height: 500px;
+    width: 55vmin;
+    height: 75vmin;
 }
 
 .rank_popup .rank_title {

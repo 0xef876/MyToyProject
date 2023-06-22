@@ -611,7 +611,47 @@
 			title: 'Oops...',
 			text: 'Game Over !',
 		}).then(function () {
-			location.reload();
+			Swal.fire({
+				title: "Submit Your username",
+				input: "text",		
+				showCancelButton: true,
+				inputAttributes: {
+					autocapitalize: 'off'
+				},
+				confirmButtonText: 'Submit',
+				showLoaderOnConfirm: true,
+				preConfirm: (username) => {
+					// post 요청
+					return fetch(`https://kittypark.ducdns.org:8443/rank?username=${username}&score=${turn}`,
+					{method: "POST"})
+
+						.then(response => {
+							if (!response.ok) {
+								throw new Error(response.statusText)
+							}
+							return response.json()
+						}
+						)
+						.catch(error => {
+							Swal.showValidationMessage(
+								`Request failed: ${error}`
+							)
+						}
+						)
+				},
+				allowOutsideClick: () => !Swal.isLoading()
+			}).then((result) => {
+				if (result.isConfirmed) {
+					Swal.fire({
+						title : "Success",
+						text : "Your score is saved",
+						icon : "success"
+					}).then(function(){
+						location.reload();
+					}
+					)
+				}
+			})
 		});
 	};
 	const balls_shoot = (i, t) => {
