@@ -1,29 +1,48 @@
 <!DOCTYPE html>
 <html lang="ko">
-	
-<head>
-<head>
-	<meta charset="UTF-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link rel="stylesheet" type="text/css" href="style.css" />
-	<link rel="shortcut icon" type="image/png" href="../img/logo.png">
-	<script src="//cdn.jsdelivr.net/npm/sweetalert2@10?v=<?php echo time(); ?>"></script>
 
-	<title>Swipe Brick</title>
+<head>
 
-</head>
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link rel="stylesheet" type="text/css" href="style.css" />
+		<link rel="shortcut icon" type="image/png" href="../img/logo.png">
+		<script src="//cdn.jsdelivr.net/npm/sweetalert2@10?v=<?php echo time(); ?>"></script>
+
+		<title>Swipe Brick</title>
+
+	</head>
+
 <body>
 
 	<div id="app">
-			<div class="game">
-				<span class="score"> Score = 0</span>
-				<span class="high_score"> High Score = 0</span>
-			</div>
+		<div class="game">
+			<span class="score"> Score = 0</span>
+			<span class="high_score"> High Score = 0</span>
+		</div>
 		<!-- <span>Score = <span class="score">1</span></span><span class="high_score">0</span>&nbsp;&nbsp;&nbsp;<span class="ball">Ball: <span class="b">1</span></span> -->
 		<canvas id="canvas" width="450" height="450"></canvas>
-		<span class="b">Ball x 1</span>
+		<div class="bottom">
+			<span class="b">Ball x 1</span>
+			<span class="rank">Ranking</span>
+		</div>
 	</div>
+
+	<div class="rank_popup">
+		<!-- Modal -->
+		<div class="rank_title">
+			<span>Ranking</span>
+			<span class="close_x">X</span>
+		</div>
+		<div class="rank_content">
+			Comming Soon
+		</div>
+	</div>
+
 	<script src="script.js"></script>
+	<script src="rank.js"></script>
 </body>
+
 </html>
