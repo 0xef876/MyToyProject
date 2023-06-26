@@ -243,11 +243,13 @@ var Game = /** @class */ (function () {
                 _this.onAction();
         });
         // 터치 멈추기
+        var _this = this;
+        var score = this.blocks.length - 1;
         Swal.fire({
             title: 'Game Over',
             html:
                 "<br>" + 
-                "Your score is " + this.blocks.length +
+                "Your score is " + score +
                 "<br>" + "<br>" +
                 "Do you want to save your score?",
             showDenyButton: true,
@@ -267,7 +269,7 @@ var Game = /** @class */ (function () {
                     showLoaderOnConfirm: true,
                     preConfirm: (username) => {
                         // post 요청
-                        return fetch(`https://kittypark.duckdns.org:8443/stack_rank?username=${username}&score=${this.blocks.length}`,
+                        return fetch(`https://kittypark.duckdns.org:8443/stack_rank?username=${username}&score=${score}`,
                             { method: "POST" })
 
                             .then(response => {
