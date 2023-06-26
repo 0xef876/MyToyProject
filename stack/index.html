@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <script src="https://codepen.io/steveg3003/pen/zBVakw"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r83/three.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/latest/TweenMax.min.js"></script>
+    <link rel="shortcut icon" type="image/png" href="../img/logo.png">
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@10?v=<?php echo time(); ?>"></script>
+    <link rel="stylesheet" type="text/css" href="style.css" />
+    <title>Stack</title>
+
+
+</head>
+
+<body>
+    <script src="./script.js" async></script>
+    <div id="container">
+        <div id="game"></div>
+        <div id="score">0</div>
+        <div id="instructions">Click (or press the spacebar) to place the block</div>
+        <div class="game-over">
+            <h2>Game Over</h2>
+            <p>You did great, you're the best.</p>
+            <p>Click or spacebar to start again</p>
+        </div>
+        <div class="game-ready">
+            <div id="heading">
+                <p>Stack</p>
+            </div>
+            <div id="start-button">Start</div>
+            <div></div>
+
+        </div>
+    </div>
+
+    <div class="rank_popup">
+        <!-- Modal -->
+        <div class="rank_title">
+            <span>Ranking</span>
+            <span class="close_x">X</span>
+        </div>
+        <div class="rank_content">
+        </div>
+    </div>
+</body>
+
+</html>

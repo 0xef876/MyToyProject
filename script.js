@@ -31,6 +31,9 @@ function goToSnake()
 function goToSwipe() {
     window.location.href = "swipe_brick/index.html";
 }
+function goToStack() {
+    window.location.href = "stack/index.html";
+}
 function goToCommingSoon()
 {
     Swal.fire({
