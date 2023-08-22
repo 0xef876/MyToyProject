@@ -26,8 +26,14 @@ function login() {
 
 
     var xhr = new XMLHttpRequest();
+
     xhr.open("GET", "https://toy.rainclouds.xyz:8443/login?username=" + id + "&password=" + hash_pw);
     xhr.setRequestHeader("Content-Type", "application/json");
+    xhr.setRequestHeader('X-Requested-With', 'XMLHttpRequest');
+    xhr.setRequestHeader("Access-Control-Allow-Origin", "*");
+
+
+
     xhr.send(JSON.stringify(data));
 
     xhr.addEventListener("load", function () {
@@ -57,6 +63,8 @@ function signup() {
     var xhr = new XMLHttpRequest();
     xhr.open("POST", "https://toy.rainclouds.xyz:8443/signup?username=" + id1 + "&password=" + hash_pw1 + "&phone=" + phone + "&name=" + name);
     xhr.setRequestHeader("Content-Type", "application/json");
+    xhr.setRequestHeader('X-Requested-With', 'XMLHttpRequest');
+    xhr.setRequestHeader("Access-Control-Allow-Origin", "*");
     xhr.send(JSON.stringify(data));
 
     xhr.addEventListener("load", function () {
