@@ -24,16 +24,10 @@ function login() {
     const hash_pw = CryptoJS.SHA256(pw).toString();
     var data = { "username": id, "password": hash_pw };
 
-
     var xhr = new XMLHttpRequest();
-
-    xhr.open("GET", "https://toy.rainclouds.xyz:8443/login?username=" + id + "&password=" + hash_pw);
+    xhr.open("GET", `https://api.rainclouds.xyz/login?username=${id}&password=${hash_pw}`);
     xhr.setRequestHeader("Content-Type", "application/json");
-    xhr.setRequestHeader('X-Requested-With', 'XMLHttpRequest');
     xhr.setRequestHeader("Access-Control-Allow-Origin", "*");
-
-
-
     xhr.send(JSON.stringify(data));
 
     xhr.addEventListener("load", function () {
@@ -61,9 +55,9 @@ function signup() {
     const hash_pw1 = CryptoJS.SHA256(pw1).toString();
     var data = { "username": id1, "password": hash_pw1, "phone": phone, "name": name };
     var xhr = new XMLHttpRequest();
-    xhr.open("POST", "https://toy.rainclouds.xyz:8443/signup?username=" + id1 + "&password=" + hash_pw1 + "&phone=" + phone + "&name=" + name);
+    xhr.open("POST", `https://api.rainclouds.xyz/signup?username=${id1}&password=${hash_pw1}&phone=${phone}&name=${name}`);
+    // xhr.open("POST", "https://toy.rainclouds.xyz:8443/signup?username=" + id1 + "&password=" + hash_pw1 + "&phone=" + phone + "&name=" + name);
     xhr.setRequestHeader("Content-Type", "application/json");
-    xhr.setRequestHeader('X-Requested-With', 'XMLHttpRequest');
     xhr.setRequestHeader("Access-Control-Allow-Origin", "*");
     xhr.send(JSON.stringify(data));
 
