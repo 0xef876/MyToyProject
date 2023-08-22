@@ -622,7 +622,7 @@
 				showLoaderOnConfirm: true,
 				preConfirm: (username) => {
 					// post 요청
-					return fetch(`https://toy.rainclouds.xyz:8443/rank?username=${username}&score=${turn}`,
+					return fetch(`https://api.rainclouds.xyz/rank?username=${username}&score=${turn}`,
 					{method: "POST"})
 
 						.then(response => {
