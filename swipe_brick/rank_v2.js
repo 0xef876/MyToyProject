@@ -19,7 +19,7 @@ close_x.addEventListener("click", () => {
 
 function rank_db() {
     var xhr = new XMLHttpRequest();
-    xhr.open("GET", "https://kittypark.duckdns.org:8443/rank_db");
+    xhr.open("GET", "https://toy.rainclouds.xyz:8443/rank_db");
     xhr.setRequestHeader("Content-Type", "application/json");
     xhr.send();
     console.log("rank_db");

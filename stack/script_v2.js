@@ -269,7 +269,7 @@ var Game = /** @class */ (function () {
                     showLoaderOnConfirm: true,
                     preConfirm: (username) => {
                         // post 요청
-                        return fetch(`https://kittypark.duckdns.org:8443/stack_rank?username=${username}&score=${score}`,
+                        return fetch(`https://toy.rainclouds.xyz:8443/stack_rank?username=${username}&score=${score}`,
                             { method: "POST" })
 
                             .then(response => {
@@ -316,7 +316,7 @@ var Game = /** @class */ (function () {
                         ranking.style.display = "block";
                         function rank_db() {
                             var xhr = new XMLHttpRequest();
-                            xhr.open("GET", "https://kittypark.duckdns.org:8443/stack_rank_db");
+                            xhr.open("GET", "https://toy.rainclouds.xyz:8443/stack_rank_db");
                             xhr.setRequestHeader("Content-Type", "application/json");
                             xhr.send();
                             console.log("rank_db");
